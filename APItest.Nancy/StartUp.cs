@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace APItest.Nancy
+namespace Server.Nancy
 {
     public class StartUp
     {

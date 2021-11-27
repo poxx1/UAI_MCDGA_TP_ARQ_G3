@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Methods\Methods.csproj" />
-    <ProjectReference Include="..\Properties\Properties.csproj" />
+    <ProjectReference Include="..\Methods\APIs.csproj" />
+    <ProjectReference Include="..\Properties\Models.csproj" />
   </ItemGroup>
 
 </Project>
