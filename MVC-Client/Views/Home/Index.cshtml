@@ -1,0 +1,22 @@
+﻿@{
+    @model string
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Controlador del telescopio</h1>
+    <h3> Lastra Julian Marcos - Parcial 2 - MC</h3>
+
+    @Html.ActionLink("Inicializar", "Init")
+
+
+    @Html.ActionLink("Consumir", "Info")
+
+
+    @Html.ActionLink("Finalizar", "Finish")
+
+
+    <p>Resultado:</p>
+    <p>@Model</p>
+
+</div>
