@@ -1,17 +1,29 @@
 ﻿using Nancy;
+using Models;
 using Nancy.Extensions;
 using Properties;
 using APIs;
 using System;
+using System.Collections.Generic;
 
 namespace Server.Nancy.Controller
 {
     public class MainController : NancyModule
     {
+        #region Explanation
+        /*
+         * 1. You have to put some Bultos on the Cinta
+         * 2. The Brazo takes from the Cinta some Bultos
+         * 3. The Brazo once it has a Bulto, puts it on the Prensa
+         * 4. The Prensa, compress the Bultos.
+         */
+        #endregion
         #region Variables & Instances
         private static bool cintaIsStarted = false;
         private static bool brazoIsStarted = false;
         private static bool prensaIsStarted = false;
+
+        private PilaBultos pilaBultos = new PilaBultos();
         #endregion  
         public MainController()
         {
@@ -34,64 +46,44 @@ namespace Server.Nancy.Controller
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 var mongo = new MongoBDConnector();
-                
-                return mongo.connect() == true ? "POST 200 OK" : "POST 5xx ERROR";
+
+                return "ok";//mongo.connect() == true ? "POST 200 OK" : "POST 5xx ERROR";
             });
             #endregion
 
             #region Cinta
-            Post("/v1/Info", x =>
-            {
-                //Objeto a modificar con el POST
-                var product = new CuerpoCeleste();
-                //Obtengo el raw
-                var rawRequest = Context.Request.Body.AsString();
-                //Lo paso a la clase
-
-                var instancia = new Randomizer();
-
-                if (cintaIsStarted)
-                {
-                    var get = instancia.calcularOutput();
-                    var output = instancia.InfoCalculator(get);
-
-                    return output;
-                }
-
-                else
-                {
-                    return "No esta iniciado el telescopio";
-                }
-
-
-            });
-
-            Get("/v1/cinta/state", x=>
+            //var rawRequest = Context.Request.Body.AsString();
+            Get("/v1/cinta/state", x =>
             {;
-
-
-                return "?";
-            });
+                return cintaIsStarted == true ? "The Cinta is working":"The Cinta is off";
+            }); // Tells if the Cinta is ON/OFF
 
             Get("/v1/cinta/sacar_bulto", x =>
             {;
                 if (!cintaIsStarted)
                     return "First you have to turn ON the cinta";
 
-                //Call to the sacarbultos service
+                //Call to the sacarbultos service from the Brazo
 
                 return "The bulto has been removed succesfully";
             });
 
             Get("/v1/cinta/poner_bulto", x =>
-            {
-                ;
+            {;
+                //To put a bulto we use ZeroMQ to send the desired bulto to the Cinta.
                 if (!cintaIsStarted)
                     return "First you have to turn ON the cinta";
 
-                //Call to the ponerBulto service
+                //ZMQ. Send request to the Server. When the server GETs the request, add the Bulto to the Cinta.
 
-                return "?";
+                //Remove the bulto from the Pila. We use FIFO for the Queue/Bultos list.
+                var lst = new List<Bultos>();
+                var blt = new Bultos_Manager();
+                
+                lst.RemoveAt(0);
+                pilaBultos.pilaBultos = lst;
+
+                return "The bulto is now on the Cinta";
             });
 
             Get("/v1/cinta/descontar_bulto", x =>
@@ -102,7 +94,8 @@ namespace Server.Nancy.Controller
             });
 
             Get("/v1/cinta/turnon", x =>
-            {;
+            {
+                ;
                 if (cintaIsStarted)
                 {
                     Console.WriteLine("Incoming request for /v1/cinta_turnon");
@@ -144,6 +137,65 @@ namespace Server.Nancy.Controller
 
                 return "The cinta is already off";
             });
+            #endregion
+
+            #region Bultos
+            Get("/v1/bultos/agregar", x =>
+            {
+                ;
+                var bultos = new Bultos_Manager();
+                var bulto = new Bultos();
+                var lst = new List<Bultos>();
+
+                pilaBultos.cantidadBultos = bultos.GetBultosQuantity();
+
+                if (bultos.Insert(pilaBultos.cantidadBultos + 1))
+                {
+                    bulto.IDBulto = pilaBultos.cantidadBultos + 1;
+                    lst.Add(bulto);
+                }
+
+                pilaBultos.pilaBultos = lst;
+
+                Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
+
+                return "The bulto has been added succesfully.";
+            });
+
+            Get("/v1/bultos/", x =>
+            {
+                ;
+                if (!cintaIsStarted)
+                    return "First you have to turn ON the cinta";
+
+                //Call to the ponerBulto service
+
+                return "?";
+            });
+            #endregion
+
+            #region Brazo
+            Get("/v1/brazo/tomar_bulto", x =>
+            {;
+                var bultos = new Bultos_Manager();
+                var bulto = new Bultos();
+                var lst = new List<Bultos>();
+
+                pilaBultos.cantidadBultos = bultos.GetBultosQuantity();
+
+                if (bultos.Insert(pilaBultos.cantidadBultos + 1))
+                {
+                    bulto.IDBulto = pilaBultos.cantidadBultos + 1;
+                    lst.Add(bulto);
+                }
+
+                pilaBultos.pilaBultos = lst;
+
+                Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
+
+                return "The bulto has been added succesfully.";
+            });
+
             #endregion
         }
     }
