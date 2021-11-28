@@ -1,7 +1,6 @@
 ﻿using Nancy;
 using Models;
 using Nancy.Extensions;
-using Properties;
 using APIs;
 using System;
 using System.Collections.Generic;
@@ -18,6 +17,7 @@ namespace Server.Nancy.Controller
          * 4. The Prensa, compress the Bultos.
          */
         #endregion
+
         #region Variables & Instances
         private static bool cintaIsStarted = false;
         private static bool brazoIsStarted = false;
@@ -45,7 +45,7 @@ namespace Server.Nancy.Controller
                 Console.WriteLine("Request http code: 200 OK \r\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
-                var mongo = new MongoBDConnector();
+                var mongo = new MongoBD();
 
                 return "ok";//mongo.connect() == true ? "POST 200 OK" : "POST 5xx ERROR";
             });
@@ -71,14 +71,21 @@ namespace Server.Nancy.Controller
             Get("/v1/cinta/poner_bulto", x =>
             {;
                 //To put a bulto we use ZeroMQ to send the desired bulto to the Cinta.
+
                 if (!cintaIsStarted)
                     return "First you have to turn ON the cinta";
 
                 //ZMQ. Send request to the Server. When the server GETs the request, add the Bulto to the Cinta.
 
+
                 //Remove the bulto from the Pila. We use FIFO for the Queue/Bultos list.
                 var lst = new List<Bultos>();
-                var blt = new Bultos_Manager();
+                var blt = new Cinta_Manager();
+
+                //First list all the Bultos from the MongoDB
+                
+
+                //Second remove the desired Bulto from the Queue
                 
                 lst.RemoveAt(0);
                 pilaBultos.pilaBultos = lst;
