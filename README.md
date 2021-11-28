@@ -3,12 +3,13 @@ Trabajo practico del Grupo 3 Arquitectura para "Modelos Computacionales de Gesti
 
 Integrantes:
 
-Andino, Cristian Ariel.
-Covarrubias, Barbara Noelia.
-Gerardi, Federico Agustin.
-Lastra, Julian Marcos.
-Maroñas, Leandro Daniel.
-Veliz, Fernando Ezequiel.
+- Andino, Cristian Ariel.
+- Covarrubias, Barbara Noelia.
+- Gerardi, Federico Agustin.
+- Lastra, Julian Marcos.
+- Maroñas, Leandro Daniel.
+- Veliz, Fernando Ezequiel.
+
 Tecnologías obligatorias: 
 - C# >> Solucion general
 - JavaScript 
