@@ -1,0 +1,12 @@
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\bin\Debug\net5.0\APIs.deps.json
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\bin\Debug\net5.0\APIs.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\bin\Debug\net5.0\ref\APIs.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\bin\Debug\net5.0\APIs.pdb
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.csprojAssemblyReference.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.AssemblyInfoInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.AssemblyInfo.cs
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.csproj.CoreCompileInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\ref\APIs.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\APIs\obj\Debug\net5.0\APIs.pdb
