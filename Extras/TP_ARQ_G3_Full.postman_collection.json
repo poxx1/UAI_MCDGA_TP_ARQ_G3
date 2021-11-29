@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "c8446557-70ea-4c65-b0c7-acc26afb49a9",
+		"name": "TP_ARQ_G3_Full",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bulto",
+			"item": [
+				{
+					"name": "bulto_add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "MongoTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cinta",
+			"item": [
+				{
+					"name": "Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Prender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Poner bulto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prensa",
+			"item": [
+				{
+					"name": "Create new Prensa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:27018/v0/Press/Create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "27018",
+							"path": [
+								"v0",
+								"Press",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Turn ON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:27018/v1/Press/TurnOn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "27018",
+							"path": [
+								"v1",
+								"Press",
+								"TurnOn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Turn OFF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:27018/v1/Press/TurnOff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "27018",
+							"path": [
+								"v1",
+								"Press",
+								"TurnOff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

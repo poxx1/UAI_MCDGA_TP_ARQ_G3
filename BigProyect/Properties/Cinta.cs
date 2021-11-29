@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Cinta:Machines
+    public class Cinta : Machines
     {
         public int BultosQuantity { get; set; }
-
+        public List<Bultos> bultosOnCinta { get; set; }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using Nancy;
 using Models;
-using Nancy.Extensions;
+using System.Linq;
 using APIs;
 using System;
 using System.Collections.Generic;
+using Nancy.Extensions;
 
 namespace Server.Nancy.Controller
 {
@@ -15,6 +16,13 @@ namespace Server.Nancy.Controller
          * 2. The Brazo takes from the Cinta some Bultos
          * 3. The Brazo once it has a Bulto, puts it on the Prensa
          * 4. The Prensa, compress the Bultos.
+         * 
+         * A> Para la prensa usar Sockets & Patron Obserber > Clase 8.
+         * B> Para los sensores hay que usar Client/Server > Clase 5 o 4 creo. 
+         * Client > Prensa y los Sensores son el Server.
+         * C> El sistema es el UI/Dashbord web, aca implementamos API Gateway para conectarnos
+         * a los diferentes componentes, Brazo, Cinta y Prensa.
+         * 
          */
         #endregion
 
@@ -24,6 +32,7 @@ namespace Server.Nancy.Controller
         private static bool prensaIsStarted = false;
 
         private PilaBultos pilaBultos = new PilaBultos();
+        private Cinta cinta = new Cinta();
         #endregion  
         public MainController()
         {
@@ -70,28 +79,38 @@ namespace Server.Nancy.Controller
 
             Get("/v1/cinta/poner_bulto", x =>
             {;
-                //To put a bulto we use ZeroMQ to send the desired bulto to the Cinta.
+            //To put a bulto we use ZeroMQ to send the desired bulto to the Cinta.
 
-                if (!cintaIsStarted)
-                    return "First you have to turn ON the cinta";
+            if (!cintaIsStarted)
+                return "First you have to turn ON the cinta";
 
                 //ZMQ. Send request to the Server. When the server GETs the request, add the Bulto to the Cinta.
 
 
                 //Remove the bulto from the Pila. We use FIFO for the Queue/Bultos list.
                 var lst = new List<Bultos>();
-                var blt = new Cinta_Manager();
+                var blt = new Bultos_Manager();
+                var cnt = new Cinta_Manager();
+                var bulto = new Bultos();
+
+                var lstBultosCinta = new List<Bultos>();
 
                 //First list all the Bultos from the MongoDB
-                
+                lst = blt.lstBultos();
+                bulto = lst.First();
 
                 //Second remove the desired Bulto from the Queue
-                
-                lst.RemoveAt(0);
+                blt.Delete(bulto.IDBultoMongo);
+                lst.Remove(bulto);
                 pilaBultos.pilaBultos = lst;
 
+                //Now work for the Cinta List
+                //Add the Bulto to the Cinta
+                
+                cinta.bultosOnCinta = lstBultosCinta();
+
                 return "The bulto is now on the Cinta";
-            });
+            }); //Still needs ZMQ usage
 
             Get("/v1/cinta/descontar_bulto", x =>
             {;

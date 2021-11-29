@@ -6,7 +6,7 @@ namespace APIs
 {
     public class MongoBD
     {
-        #region Bultos Manager
+        #region Shared Methods
         public IMongoDatabase connect()
         {
             var settings = MongoClientSettings.FromConnectionString(
@@ -20,6 +20,9 @@ namespace APIs
 
             return database;
         }
+        #endregion
+
+        #region Bultos Manager
         public bool bultosInsert(int id)
         {
             var database = connect();
@@ -47,11 +50,40 @@ namespace APIs
 
             return lst;
         }
-
         public int getBultosQuantity()
         {
             var database = connect();
             var collection = database.GetCollection<Bultos>("Bultos");
+
+            List<Bultos> lst = collection.Find(b => true).ToList();
+
+            return lst.Count;
+        }
+        #endregion
+
+        #region Cinta Manager
+        public bool addBultoToCinta(int id)
+        {
+
+            return true;
+        }
+        public bool removeBultoFromCinta(string mongoId)
+        {
+
+            return true;
+        }
+        public List<Bultos> getBultosOnCinta()
+        {
+            var database = connect();
+            var collection = database.GetCollection<Bultos>("Cinta");
+            List<Bultos> lst = collection.Find(b => true).ToList();
+
+            return lst;
+        }
+        public int getBultosQuantityOnCinta()
+        {
+            var database = connect();
+            var collection = database.GetCollection<Bultos>("Cinta");
 
             List<Bultos> lst = collection.Find(b => true).ToList();
 
