@@ -4,6 +4,130 @@
     "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\ZMQ_Server_G3\\ZMQ_Server_G3.csproj": {}
   },
   "projects": {
+    "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\APIs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\APIs.csproj",
+        "projectName": "APIs",
+        "projectPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\APIs.csproj",
+        "packagesPath": "C:\\Users\\CC668CG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CC668CG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.209\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\CC668CG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CC668CG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.14.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.209\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\ZMQ_Server_G3\\ZMQ_Server_G3.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +151,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\APIs.csproj": {
+                "projectPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\APIs\\APIs.csproj"
+              },
+              "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

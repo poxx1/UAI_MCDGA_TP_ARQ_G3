@@ -9,4 +9,9 @@
     <PackageReference Include="NetMQ" Version="4.0.1.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APIs\APIs.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
 </Project>

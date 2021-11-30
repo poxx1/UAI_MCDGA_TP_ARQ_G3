@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "b7FWqRThe5ioWPqhAk3T36l24MpVzQHncwN7PIiDZd8nXEgDBcovfOAX9jrfumkOjEaS1IzVsVf8iSCLZo/rzQ==",
+  "dgSpecHash": "+wNXUku8NoGYu46zoRRusLpoBg1/LDtVwagzSnqPetjf+DV5rXyHh5X63nUsb6SkQx1We2g0Wsq3sxwIk3nAVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\Convoyeur\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\CC668CG\\.nuget\\packages\\mongodb.bson\\2.14.0\\mongodb.bson.2.14.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

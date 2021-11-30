@@ -13,7 +13,6 @@ namespace APIs
         //Capa intermedia entre el BD Connector y el Main module
 
         MongoBD mongo = new MongoBD();
-
         public bool Insert(int id)
         {
             mongo.bultosInsert(id);
