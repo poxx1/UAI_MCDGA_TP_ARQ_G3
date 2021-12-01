@@ -107,7 +107,7 @@ namespace Server.Nancy.Controller
                 //Now work for the Cinta List
                 //Add the Bulto to the Cinta
                 
-                cinta.bultosOnCinta = lstBultosCinta();
+                cinta.bultosOnCinta = lstBultosCinta;
 
                 return "The bulto is now on the Cinta";
             }); //Still needs ZMQ usage
@@ -129,7 +129,7 @@ namespace Server.Nancy.Controller
                     Console.WriteLine("Request http code: 200 OK - The cinta is already turned on \r\n");
                     Console.ForegroundColor = ConsoleColor.Cyan;
 
-                    return "The cinta xd is already working";
+                    return "The cinta is already working";
                 }
                 cintaIsStarted = true;
 
@@ -139,7 +139,6 @@ namespace Server.Nancy.Controller
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 return "The cinta is now ON";
-
             });
 
             Get("/v1/cinta/turnoff", x =>
