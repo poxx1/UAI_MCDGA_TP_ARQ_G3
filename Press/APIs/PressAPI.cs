@@ -8,6 +8,7 @@ namespace APIs
     public class PressAPI
     {
         MongoDBConnector mongo = new MongoDBConnector();
+
         public bool TurnOn()
         {
             if (!CurrentState())
@@ -25,8 +26,8 @@ namespace APIs
                 return false;
             }
         }
-            public bool TurnOff()
-            {
+        public bool TurnOff()
+        {
             if (CurrentState())
             {
                 var database = mongo.connect();

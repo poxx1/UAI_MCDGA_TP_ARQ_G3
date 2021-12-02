@@ -7,7 +7,7 @@ namespace Observer
     {
         public int State { get; set; } = -0;
 
-        private List<IObserver> ListObservers = new();
+        private List<IObserver> ListObservers = new List<IObserver>();
 
         public void Attach(IObserver observer)
         {
@@ -29,7 +29,7 @@ namespace Observer
 
         public void logic()
         { 
-        
+            
         }
     }
 }
