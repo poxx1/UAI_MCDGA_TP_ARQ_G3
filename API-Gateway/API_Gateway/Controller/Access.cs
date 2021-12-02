@@ -44,8 +44,9 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/TurnON").ToString();
+                    return serverReturn;
                 }
-                return GetRequest(urlConveyor + "/v1/Conveyor/TurnON"); ;
             });
 
             Get("/v1/Conveyour/TurnOFF", x =>
@@ -57,8 +58,10 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/TurnOFF").ToString();
+                    return serverReturn;
                 }
-                return GetRequest(urlConveyor + "/v1/Conveyor/TurnOFF");
+                
             });
 
             Get("/v1/Conveyour/CheckState", x =>
@@ -70,8 +73,10 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/CheckState");
+                    return serverReturn;
                 }
-                return GetRequest(urlConveyor + "/v1/Conveyor/CheckState");
+                
             });
 
             Get("/v1/Conveyour/GetBultosQuantityOnConveyor", x =>
@@ -83,10 +88,14 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnConveyor");
+                    return serverReturn;
                 }
-                return GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnConveyor"); ;
+                ;
 
-            }); Get("/v1/Conveyour/GetBultosQuantityOnPile", x =>
+            }); 
+            
+            Get("/v1/Conveyour/GetBultosQuantityOnPile", x =>
             {
                 ;//Socket with message TurnON
                 using (var client = new RequestSocket("tcp://localhost:27022"))
@@ -95,10 +104,14 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnPile");
+                    return serverReturn;
                 }
-                return GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnPile"); ;
+                ;
 
-            }); Get("/v1/Conveyour/PutBulto", x =>
+            }); 
+            
+            Get("/v1/Conveyour/PutBulto", x =>
             {
                 ;//Socket with message TurnON
                 ConeyourManagerAPI api = new ConeyourManagerAPI();
@@ -116,9 +129,10 @@ namespace API_Gateway.Controller
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
+                    GetRequest(urlConveyor + "/v1/Conveyor/PutBulto");
+                    return serverReturn;
                 }
-
-                return GetRequest(urlConveyor + "/v1/Conveyor/PutBulto"); ;
+                ;
             });
 
             #endregion

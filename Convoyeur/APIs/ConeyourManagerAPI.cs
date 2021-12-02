@@ -58,7 +58,6 @@ namespace APIs
 
             return lst.Count;
         }
-
         public bool turnON()
         {
             var database = mongo.connect();
@@ -73,7 +72,6 @@ namespace APIs
 
             return true;
         }
-
         public bool turnOFF()
         {
             var database = mongo.connect();
@@ -88,7 +86,6 @@ namespace APIs
 
             return true;
         }
-
         public bool CheckState()
         {
             var database = mongo.connect();
