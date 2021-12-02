@@ -196,7 +196,7 @@ namespace API_Gateway.Controller
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-
+            request = null;
             return response.Content.ToString();
         }
     }

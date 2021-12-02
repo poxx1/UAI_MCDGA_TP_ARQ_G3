@@ -45,7 +45,6 @@ namespace ZMQ_Server_G3
 
             #region TCP Listener
             //bool changePort = false;
-
             while (true)
             {
                 try
@@ -57,10 +56,6 @@ namespace ZMQ_Server_G3
                         string requestIncoming = server.ReceiveFrameString();
 
                         String response = fnc[requestIncoming](requestIncoming);
-
-                        //Here i call the methods for the API
-                        //Add bulto to the List of Bultos in the Cinta.
-                        //Parses the response
 
                         server.SendFrame(response);
                         Console.WriteLine("Response sent");
