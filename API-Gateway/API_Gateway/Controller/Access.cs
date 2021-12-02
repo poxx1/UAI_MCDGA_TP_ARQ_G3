@@ -13,9 +13,9 @@ namespace API_Gateway.Controller
     {
         public Access()
         {
-            string urlPress = "http://localhost:27015";
+            string urlPress = "http://localhost:27018";
             string urlArm = "http://localhost:27015";
-            string urlConveyor = "http://localhost:27015";
+            string urlConveyor = "http://localhost:27022";
 
             #region Arm
             Get("/v1/Arm/TurnON", x =>
@@ -172,6 +172,7 @@ namespace API_Gateway.Controller
                 ;
                 return GetRequest(urlPress + "/v1/Press/CheckState");
             });
+
 
 
             #endregion

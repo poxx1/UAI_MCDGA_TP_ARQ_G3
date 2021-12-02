@@ -7,7 +7,7 @@ namespace Server.Sensores
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Lastra Julian: API REST Nancy");
+            Console.WriteLine("PRESS: API REST Nancy");
 
             //Configuro el puerto
             var url = "http://+:27018";
