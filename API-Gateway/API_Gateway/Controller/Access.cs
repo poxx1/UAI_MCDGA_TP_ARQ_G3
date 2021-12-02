@@ -19,22 +19,26 @@ namespace API_Gateway.Controller
 
             #region Arm
             Get("/v1/Arm/TurnON", x =>
-            {;
+            {
+                ;
                 return GetRequest(urlArm + "/v1/Arm/TurnON"); ;
             });
 
             Get("/v1/Arm/TurnOFF", x =>
-            {;
-                return GetRequest(urlArm + "/v1/Arm/TurnOFF");              
+            {
+                ;
+                return GetRequest(urlArm + "/v1/Arm/TurnOFF");
             });
 
             Get("/v1/Arm/CheckState", x =>
-            {;
+            {
+                ;
                 return GetRequest(urlArm + "/v1/Arm/CheckState");
             });
 
             Get("/v1/Arm/Pass", x =>
-            {;
+            {
+                ;
                 return GetRequest(urlArm + "/v1/Arm/Pass");
             });
             #endregion
@@ -70,7 +74,7 @@ namespace API_Gateway.Controller
                     client.Dispose();
                     return serverReturn;
                 }
-                
+
             });
 
             Get("/v1/Conveyour/CheckState", x =>
@@ -87,7 +91,7 @@ namespace API_Gateway.Controller
                     client.Dispose();
                     return serverReturn;
                 }
-                
+
             });
 
             Get("/v1/Conveyour/GetBultosQuantityOnConveyor", x =>
@@ -106,8 +110,8 @@ namespace API_Gateway.Controller
                 }
                 ;
 
-            }); 
-            
+            });
+
             Get("/v1/Conveyour/GetBultosQuantityOnPile", x =>
             {
                 ;//Socket with message TurnON
@@ -124,8 +128,8 @@ namespace API_Gateway.Controller
                 }
                 ;
 
-            }); 
-            
+            });
+
             Get("/v1/Conveyour/PutBulto", x =>
             {
                 ;//Socket with message TurnON
@@ -187,6 +191,14 @@ namespace API_Gateway.Controller
 
 
 
+            #endregion
+
+            #region Bultos
+            Get("/v1/Bultos/Add", x =>
+            {
+                ;
+                return GetRequest(urlArm + "/v1/Bultos/Add"); ;
+            });
             #endregion
         }
         public string GetRequest(string url)

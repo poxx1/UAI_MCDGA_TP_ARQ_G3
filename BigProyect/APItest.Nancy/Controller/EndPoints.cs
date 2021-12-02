@@ -167,7 +167,7 @@ namespace Server.Nancy.Controller
 
             //DEPRECATED
             #region Bultos
-            Get("/v1/bultos/agregar", x =>
+            Get("/v1/Bultos/Add", x =>
             {
                 ;
                 var bultos = new Bultos_Manager();
@@ -186,7 +186,7 @@ namespace Server.Nancy.Controller
 
                 Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
 
-                return "The bulto has been added succesfully.";
+                return "true";
             });
 
             Get("/v1/bultos/", x =>

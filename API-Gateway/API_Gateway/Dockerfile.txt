@@ -1,0 +1,4 @@
+﻿FROM mcr.microsoft.com/dontnet/runtime:472
+
+COPY C:/Users/CC668CG/OneDrive - EY/Desktop/Dockers .
+	ENTRYPOINT ["dotnet",]
