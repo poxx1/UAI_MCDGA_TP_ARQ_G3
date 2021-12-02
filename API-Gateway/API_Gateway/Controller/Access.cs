@@ -192,10 +192,11 @@ namespace API_Gateway.Controller
         public string GetRequest(string url)
         {
             var client = new RestClient(url);
-            client.Timeout = -1;
+            client.Timeout = 10;
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
+
             return response.Content.ToString();
         }
     }

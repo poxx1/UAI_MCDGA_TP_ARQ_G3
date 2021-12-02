@@ -4,6 +4,7 @@ using NetMQ;
 using NetMQ.Sockets;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace ZMQ_Server_G3
@@ -26,15 +27,18 @@ namespace ZMQ_Server_G3
             fnc.Add("GetBultosQuantityOnPile", x => api.getBultosQuantity().ToString());
             fnc.Add("GetBultosQuantityOnConveyor", x => api.getBultosQuantityOnCinta().ToString());
             fnc.Add("PutBulto", x => {
-                var bulto = x.Split('#');
-                blt.IDBulto = Int32.Parse(bulto[0]);
-                blt.IDBultoMongo = bulto[1];
+                var list = api.getBultos();
+                Bultos blt = list.First();
+                api.bultosDelete(blt.IDBultoMongo);
+                //var bulto = x.Split('#');
+                //blt.IDBulto = Int32.Parse(bulto[0]);
+                //blt.IDBultoMongo = bulto[1];
                 if (api.CheckState())
                 {
                     api.addBultoToCinta(blt);
-                    return "ok";
+                    return "true";
                 }
-                else { return "Can't add since the Conveyor is OFF. Please first turn ON."; }
+                else { return "false"; }
             });
             //asd.Invoke();
             #endregion
