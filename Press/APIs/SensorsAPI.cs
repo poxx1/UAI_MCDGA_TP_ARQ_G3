@@ -68,13 +68,16 @@ namespace APIs
                 return false;
             }
         }
+
+        //IS RELEASED == FALSE
+        //IS OCUPPED == TRUE
         public bool RelasePress()
         {
             if (CheckPassive())
             {
                 var db = mongo.connect();
                 var collection = db.GetCollection<Sensors>("Sensors");
-                var sensor = new Sensors() { Name = "Pasive", State = true, IDSensor = GetPassive() };
+                var sensor = new Sensors() { Name = "Pasive", State = false, IDSensor = GetPassive() };
 
                 //InsertIntoMongo
                 collection.ReplaceOne(s => s.IDSensor == GetPassive(), sensor);
@@ -84,7 +87,6 @@ namespace APIs
             {
                 return false;
             }
-
         }
         public bool OcupatePress()
         {
@@ -92,7 +94,7 @@ namespace APIs
             {
                 var db = mongo.connect();
                 var collection = db.GetCollection<Sensors>("Sensors");
-                var sensor = new Sensors() { Name = "Passive", State = false, IDSensor = GetPassive() };
+                var sensor = new Sensors() { Name = "Passive", State = true, IDSensor = GetPassive() };
 
                 //InsertIntoMongo
                 collection.ReplaceOne(s => s.IDSensor == GetPassive(), sensor);

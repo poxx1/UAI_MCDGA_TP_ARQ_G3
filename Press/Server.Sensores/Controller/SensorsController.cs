@@ -47,7 +47,6 @@ namespace Server.Sensores.Controller
                     return false;
                 }
             });
-
         }
     }
 }

@@ -6,18 +6,52 @@ using APIs;
 
 namespace Server.Nancy.Controller
 {
-    public class ArmController
+    public class ArmAPI
     {
         MongoBD mongo = new MongoBD();
         Arm arm = new Arm();
         Conveyour conv = new Conveyour();
 
-        //Check if the Press is Free
+        //ALSO CHECKS IF THE CONVEYOR IS ON
         public bool PressIsFree()
         {
-            return true;
+            if (!CurrentPressState() && !CheckPassive() && CheckStateConv())
+                return true;
+            else
+                return false;
         }
+        public bool CheckStateConv()
+        {
+            var database = mongo.connect();
+            var collection = database.GetCollection<Conveyour>("Conveyour");
+            List<Conveyour> lst = collection.Find(b => true).ToList();
 
+            return lst.First().IsStarted;
+        }
+        public bool CheckActive()
+        {
+            var db = mongo.connect();
+            var collection = db.GetCollection<Sensors>("Sensors");
+            List<Sensors> lst = collection.Find(p => true).ToList();
+
+            return lst.First().State;
+        }
+        public bool CheckPassive()
+        {
+            var db = mongo.connect();
+            var collection = db.GetCollection<Sensors>("Sensors");
+            List<Sensors> lst = collection.Find(p => true).ToList();
+
+            return lst.First().State;
+        }
+        public bool CurrentPressState()
+        {
+            var db = mongo.connect();
+            var collection = db.GetCollection<Press>("Press");
+            List<Press> lst = collection.Find(p => true).ToList();
+
+            return lst.First().IsStarted;
+        }
         public bool AddPressToBD()
         {   
             var database = mongo.connect();
@@ -37,7 +71,6 @@ namespace Server.Nancy.Controller
 
             return true;
         }
-
         //Take bultos From cinta
         public bool TakeFromConveyor()
         {
@@ -102,7 +135,6 @@ namespace Server.Nancy.Controller
             }
             return false;
         }
-
         //Pass the bulto to the Press
         public bool SendToPress()
         {
@@ -124,29 +156,48 @@ namespace Server.Nancy.Controller
         }
         public bool TurnON()
         {
-            var database = mongo.connect();
-            var collection = database.GetCollection<Arm>("Arm");
-            List<Arm> lst = collection.Find(a => true).ToList();
+            //Check state
+            if (!CheckState())
+            {
+                var database = mongo.connect();
+                var collection = database.GetCollection<Arm>("Arm");
+                List<Arm> lst = collection.Find(a => true).ToList();
 
-            arm = lst.First();
-            arm.IsStarted = true;
+                arm = lst.First();
+                arm.IsStarted = true;
 
-            collection.ReplaceOne(c => c.IdConveyourMongo == arm.IdConveyourMongo, arm);
+                collection.ReplaceOne(c => c.IdArmMongo == arm.IdArmMongo, arm);
+                return true;
+            }
 
-            return true;
+            else
+            { return false; }
         }
         public bool TurnOFF()
         {
+            if (CheckState())
+            {
+                var database = mongo.connect();
+                var collection = database.GetCollection<Arm>("Arm");
+                List<Arm> lst = collection.Find(a => true).ToList();
+
+                arm = lst.First();
+                arm.IsStarted = true;
+
+                collection.ReplaceOne(c => c.IdArmMongo == arm.IdArmMongo, arm);
+
+                return true;
+            }
+            else { return false; }
+        }
+        public bool CreateArm()
+        {
             var database = mongo.connect();
             var collection = database.GetCollection<Arm>("Arm");
-            List<Arm> lst = collection.Find(a => true).ToList();
+            var arm = new Arm() { IsStarted = true };
+            collection.InsertOne(arm);
 
-            arm = lst.First();
-            arm.IsStarted = true;
-
-            collection.ReplaceOne(c => c.IdConveyourMongo == arm.IdConveyourMongo, arm);
-
-            return false;
+            return true;
         }
     }
 }

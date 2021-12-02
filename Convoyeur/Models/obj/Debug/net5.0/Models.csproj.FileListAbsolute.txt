@@ -9,3 +9,4 @@ C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\D
 C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net5.0\Models.dll
 C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net5.0\ref\Models.dll
 C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net5.0\Models.pdb
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net5.0\Models.csprojAssemblyReference.cache

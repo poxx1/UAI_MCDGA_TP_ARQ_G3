@@ -205,7 +205,9 @@ namespace Server.Nancy.Controller
             #region Arm
 
             //Toma un bulto de la Cinta y se lo pasa a la prensa.
-            Get("/v1/Arm/Take", x =>
+
+            //DEPRECRATED
+            Get("/v0/Arm/Take", x =>
             {;
                 var bultos = new Bultos_Manager();
                 var bulto = new Bultos();
@@ -230,15 +232,13 @@ namespace Server.Nancy.Controller
 
                     return "The bulto has been added succesfully.";
                 }
-
-                //
-
                 return "Please check if the Press & the Arm are turned ON. Also check if the Press is not compressing.";
             });
 
+            //USING
             Get("/v1/Arm/Pass", x =>
             {;
-                ArmController arm = new ArmController();
+                ArmAPI arm = new ArmAPI();
                 if(arm.TakeFromConveyor())
                     return "The bulto has been added succesfully.";  
                
@@ -247,11 +247,40 @@ namespace Server.Nancy.Controller
                 }
             });
 
-            Get("/v1/Arm/AddNew", x =>
+            //USING
+            Get("/v1/Arm/CheckState", x =>
+            {
+                ;
+                ArmAPI arm = new ArmAPI();
+                return arm.CheckState();
+            });
+
+            Get("/v1/Arm/TurnON", x =>
+            {
+                ;
+                ArmAPI arm = new ArmAPI();
+                return arm.TurnON();
+            });
+
+            Get("/v1/Arm/TurnOFF", x =>
+            {
+                ;
+                ArmAPI arm = new ArmAPI();
+                return arm.TurnOFF();
+            });
+
+            //DEPRECATED
+            Get("/v0/Arm/AddNew", x =>
             {;
-                ArmController arm = new ArmController();
+                ArmAPI arm = new ArmAPI();
                 arm.AddPressToBD();
                 return "Agregado perri";
+            });
+            // DEPRECATED
+            Get("/v0/Arm/Create", x =>
+            {;
+                ArmAPI arm = new ArmAPI();
+                return arm.CreateArm();
             });
             #endregion 
         }

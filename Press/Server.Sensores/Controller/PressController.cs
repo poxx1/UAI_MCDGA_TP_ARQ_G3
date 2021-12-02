@@ -22,12 +22,12 @@ namespace Server.Sensores
 
             Get("/v1/Press/TurnOn", x =>
             {
-                return pAPI.TurnOn() == true ? "Press is now turned ON" : "The press is already ON";
+                return pAPI.TurnOn() == true ? true : false;
             });
 
             Get("/v1/Press/TurnOff", x =>
             {
-                return pAPI.TurnOff() == true ? "Press is now turned OFF":"Can't turn off the press, since it's already off";
+                return pAPI.TurnOff() == true ? true : false;
             });
 
             Get("/v1/Press/State", x =>

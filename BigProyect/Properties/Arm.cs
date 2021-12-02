@@ -8,7 +8,7 @@ namespace Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string IdConveyourMongo { get; set; }
+        public string IdArmMongo { get; set; }
         public bool IsStarted { get; set; }
         public List<Bultos> ListBultos { get; set; }
     }
