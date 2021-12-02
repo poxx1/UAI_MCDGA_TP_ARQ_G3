@@ -38,6 +38,69 @@ namespace API_Gateway.Controller
             Get("/v1/Conveyour/TurnON", x =>
             {
                 ;//Socket with message TurnON
+                using (var client = new RequestSocket("tcp://localhost:27022"))
+                {
+                    String request = "TurnON";
+                    client.SendFrame(request);
+                    var serverReturn = client.ReceiveFrameString();
+                    Console.WriteLine(serverReturn);
+                }
+                return GetRequest(urlConveyor + "/v1/Conveyor/TurnON"); ;
+            });
+
+            Get("/v1/Conveyour/TurnOFF", x =>
+            {
+                ;//Socket with message TurnOFF
+                using (var client = new RequestSocket("tcp://localhost:27022"))
+                {
+                    String request = "TurnOFF";
+                    client.SendFrame(request);
+                    var serverReturn = client.ReceiveFrameString();
+                    Console.WriteLine(serverReturn);
+                }
+                return GetRequest(urlConveyor + "/v1/Conveyor/TurnOFF");
+            });
+
+            Get("/v1/Conveyour/CheckState", x =>
+            {
+                ;//Socket with checkState
+                using (var client = new RequestSocket("tcp://localhost:27022"))
+                {
+                    String request = "CheckStatus";
+                    client.SendFrame(request);
+                    var serverReturn = client.ReceiveFrameString();
+                    Console.WriteLine(serverReturn);
+                }
+                return GetRequest(urlConveyor + "/v1/Conveyor/CheckState");
+            });
+
+            Get("/v1/Conveyour/GetBultosQuantityOnConveyor", x =>
+            {
+                ;
+                using (var client = new RequestSocket("tcp://localhost:27022"))
+                {
+                    String request = "GetBultosQuantityOnConveyor";
+                    client.SendFrame(request);
+                    var serverReturn = client.ReceiveFrameString();
+                    Console.WriteLine(serverReturn);
+                }
+                return GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnConveyor"); ;
+
+            }); Get("/v1/Conveyour/GetBultosQuantityOnPile", x =>
+            {
+                ;//Socket with message TurnON
+                using (var client = new RequestSocket("tcp://localhost:27022"))
+                {
+                    String request = "GetBultosQuantityOnPile";
+                    client.SendFrame(request);
+                    var serverReturn = client.ReceiveFrameString();
+                    Console.WriteLine(serverReturn);
+                }
+                return GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnPile"); ;
+
+            }); Get("/v1/Conveyour/PutBulto", x =>
+            {
+                ;//Socket with message TurnON
                 ConeyourManagerAPI api = new ConeyourManagerAPI();
 
                 using (var client = new RequestSocket("tcp://localhost:27022"))
@@ -49,27 +112,14 @@ namespace API_Gateway.Controller
                     api.bultosDelete(bulto.IDBultoMongo);
 
                     //Then i send this bulto to the Server that is the Cinta
-                    String request = bulto.IDBulto + "#" + bulto.IDBultoMongo;
+                    String request = "PutBulto";//bulto.IDBulto + "#" + bulto.IDBultoMongo; 
                     client.SendFrame(request);
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                 }
 
-                return GetRequest(urlConveyor + "/v1/Conveyor/TurnON"); ;
+                return GetRequest(urlConveyor + "/v1/Conveyor/PutBulto"); ;
             });
-
-            Get("/v1/Conveyour/TurnOFF", x =>
-            {
-                ;//Socket with message TurnOFF
-                return GetRequest(urlConveyor + "/v1/Conveyor/TurnON");
-            });
-
-            Get("/v1/Conveyour/CheckState", x =>
-            {
-                ;//Socket with checkState
-                return GetRequest(urlConveyor + "/v1/Conveyor/TurnON");
-            });
-
 
             #endregion
 

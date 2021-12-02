@@ -1,45 +1,40 @@
 {
   "version": 2,
-  "dgSpecHash": "n99Csuw4zlyVbxoHRu93tFfTeTWBryA9b0c7lVV3YRkfYdPa7Rin6mN2rtVqUlsN8IDAL7WG7u2zaGgHYM6PTg==",
-  "success": false,
+  "dgSpecHash": "NBoHqhq8MR36YGhG3EPVsG0VWrHpz9UVlU2RmvfkTcLbaXiW1wlnCzQfU4oy4aZUzBGyPHSf+GVANG2dshT6jA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\API-Gateway\\API_Gateway\\API_Gateway.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Models is not compatible with net472 (.NETFramework,Version=v4.7.2). Project Models supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "Models",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project APIs is not compatible with net472 (.NETFramework,Version=v4.7.2). Project APIs supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "APIs",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Models is not compatible with net472 (.NETFramework,Version=v4.7.2) / win7-x86. Project Models supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "Models",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2/win7-x86"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project APIs is not compatible with net472 (.NETFramework,Version=v4.7.2) / win7-x86. Project APIs supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "APIs",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2/win7-x86"
-      ]
-    }
-  ]
+  "expectedPackageFiles": [
+    "C:\\Users\\CC668CG\\.nuget\\packages\\asyncio\\0.1.69\\asyncio.0.1.69.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin\\4.2.0\\microsoft.owin.4.2.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin.host.httplistener\\4.2.0\\microsoft.owin.host.httplistener.4.2.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin.hosting\\4.2.0\\microsoft.owin.hosting.4.2.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\mongodb.bson\\2.14.0\\mongodb.bson.2.14.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\mongodb.driver\\2.14.0\\mongodb.driver.2.14.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\mongodb.driver.core\\2.14.0\\mongodb.driver.core.2.14.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\nacl.net\\0.1.13\\nacl.net.0.1.13.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\nancy\\2.0.0\\nancy.2.0.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\nancy.owin\\2.0.0\\nancy.owin.2.0.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\netmq\\4.0.1.6\\netmq.4.0.1.6.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\system.security.cryptography.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\CC668CG\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
 }

@@ -1,0 +1,11 @@
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\bin\Debug\net472\Models.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\bin\Debug\net472\Models.pdb
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\bin\Debug\net472\MongoDB.Bson.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.csprojAssemblyReference.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.AssemblyInfoInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.AssemblyInfo.cs
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.csproj.CoreCompileInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.csproj.CopyComplete
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\Convoyeur\Models\obj\Debug\net472\Models.pdb
