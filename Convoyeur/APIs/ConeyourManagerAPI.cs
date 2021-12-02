@@ -44,7 +44,7 @@ namespace APIs
         public List<Bultos> getBultosOnCinta()
         {
             var database = mongo.connect();
-            var collection = database.GetCollection<Bultos>("Cinta");
+            var collection = database.GetCollection<Bultos>("Conveyour");
             List<Bultos> lst = collection.Find(b => true).ToList();
 
             return lst;
@@ -52,7 +52,7 @@ namespace APIs
         public int getBultosQuantityOnCinta()
         {
             var database = mongo.connect();
-            var collection = database.GetCollection<Bultos>("Cinta");
+            var collection = database.GetCollection<Bultos>("Conveyour");
 
             List<Bultos> lst = collection.Find(b => true).ToList();
 

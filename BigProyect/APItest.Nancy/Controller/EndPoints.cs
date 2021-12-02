@@ -4,6 +4,7 @@ using System.Linq;
 using APIs;
 using System;
 using System.Collections.Generic;
+using Serilog;
 using Nancy.Extensions;
 
 namespace Server.Nancy.Controller
@@ -184,7 +185,13 @@ namespace Server.Nancy.Controller
 
                 pilaBultos.pilaBultos = lst;
 
-                Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
+                //Console.WriteLine();
+
+                using (var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger())
+                {
+                    logger.Information("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
+                   // logger.Warning("");
+                };
 
                 return "true";
             });
@@ -283,6 +290,15 @@ namespace Server.Nancy.Controller
                 return arm.CreateArm();
             });
             #endregion 
+        }
+
+        public void log()
+        {
+            using (var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger()) 
+            {
+                logger.Information("");
+                logger.Warning("");
+            };
         }
     }
 }

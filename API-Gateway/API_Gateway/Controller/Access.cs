@@ -127,9 +127,7 @@ namespace API_Gateway.Controller
                     return serverReturn;
                 }
                 ;
-
             });
-
             Get("/v1/Conveyour/PutBulto", x =>
             {
                 ;//Socket with message TurnON
