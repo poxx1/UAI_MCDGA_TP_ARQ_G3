@@ -1,16 +1,45 @@
 {
   "version": 2,
-  "dgSpecHash": "d3e3oQ+oi7BK5M+OJgMe7BkM0hW2ripb+iLlv8o0XuRQiI/a2Pa8ianjJ/xzNARjdxXS48fD2jxEAR3AoGerkA==",
-  "success": true,
+  "dgSpecHash": "n99Csuw4zlyVbxoHRu93tFfTeTWBryA9b0c7lVV3YRkfYdPa7Rin6mN2rtVqUlsN8IDAL7WG7u2zaGgHYM6PTg==",
+  "success": false,
   "projectFilePath": "C:\\Users\\CC668CG\\OneDrive - EY\\Desktop\\TP_Arquitectura_G3\\API-Gateway\\API_Gateway\\API_Gateway.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin\\4.2.0\\microsoft.owin.4.2.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin.host.httplistener\\4.2.0\\microsoft.owin.host.httplistener.4.2.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\microsoft.owin.hosting\\4.2.0\\microsoft.owin.hosting.4.2.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\nancy\\2.0.0\\nancy.2.0.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\nancy.owin\\2.0.0\\nancy.owin.2.0.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512",
-    "C:\\Users\\CC668CG\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512"
-  ],
-  "logs": []
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Models is not compatible with net472 (.NETFramework,Version=v4.7.2). Project Models supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Models",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project APIs is not compatible with net472 (.NETFramework,Version=v4.7.2). Project APIs supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "APIs",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Models is not compatible with net472 (.NETFramework,Version=v4.7.2) / win7-x86. Project Models supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Models",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project APIs is not compatible with net472 (.NETFramework,Version=v4.7.2) / win7-x86. Project APIs supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "APIs",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    }
+  ]
 }

@@ -20,9 +20,9 @@ namespace ZMQ_Server_G3
             #region Decision tree
             //Dictionary<string,string> dic = new Dictionary<string,string>();
             Dictionary<string,Func<string,string>> fnc = new Dictionary<string, Func<string,string>>();
-            fnc.Add("turnon", x => api.CheckState() ? "false":api.turnON().ToString());
-            fnc.Add("turnoff", x => !api.CheckState() ? "false" : api.turnOFF().ToString());
-            fnc.Add("checkstatus", x => api.CheckState().ToString());
+            fnc.Add("TurnON", x => api.CheckState() ? "false":api.turnON().ToString());
+            fnc.Add("TurnOFF", x => !api.CheckState() ? "false" : api.turnOFF().ToString());
+            fnc.Add("CheckStatus", x => api.CheckState().ToString());
             fnc.Add("GetBultosQuantityOnPile", x => api.getBultosQuantity().ToString());
             fnc.Add("GetBultosQuantityOnConveyor", x => api.getBultosQuantityOnCinta().ToString());
             fnc.Add("PutBulto", x => {
