@@ -20,17 +20,17 @@ namespace Server.Sensores
                 return "The Press has been created correctly";
             });
 
-            Get("/v1/Press/TurnOn", x =>
+            Get("/v1/Press/TurnON", x =>
             {
                 return pAPI.TurnOn() == true ? true : false;
             });
 
-            Get("/v1/Press/TurnOff", x =>
+            Get("/v1/Press/TurnOFF", x =>
             {
                 return pAPI.TurnOff() == true ? true : false;
             });
 
-            Get("/v1/Press/State", x =>
+            Get("/v1/Press/CheckState", x =>
             {   
                 return pAPI.CurrentState();
             });

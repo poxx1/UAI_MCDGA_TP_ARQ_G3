@@ -25,12 +25,17 @@ namespace API_Gateway.Controller
 
             Get("/v1/Arm/TurnOFF", x =>
             {;
-                return GetRequest(urlArm + "/v1/Arm/TurnON");              
+                return GetRequest(urlArm + "/v1/Arm/TurnOFF");              
             });
 
             Get("/v1/Arm/CheckState", x =>
             {;
-                return GetRequest(urlArm + "/v1/Arm/TurnON");
+                return GetRequest(urlArm + "/v1/Arm/CheckState");
+            });
+
+            Get("/v1/Arm/Pass", x =>
+            {;
+                return GetRequest(urlArm + "/v1/Arm/Pass");
             });
             #endregion
 
@@ -147,14 +152,28 @@ namespace API_Gateway.Controller
             Get("/v1/Press/TurnOFF", x =>
             {
                 ;
-                return GetRequest(urlPress + "/v1/Press/TurnON");
+                return GetRequest(urlPress + "/v1/Press/TurnOFF");
             });
 
             Get("/v1/Press/CheckState", x =>
             {
                 ;
-                return GetRequest(urlPress + "/v1/Press/TurnON");
+                return GetRequest(urlPress + "/v1/Press/CheckState");
             });
+
+            Get("/v1/Press/Compress", x =>
+            {
+                ;
+                return GetRequest(urlPress + "/v1/Press/CheckState");
+            });
+
+            Get("/v1/Press/Release", x =>
+            {
+                ;
+                return GetRequest(urlPress + "/v1/Press/CheckState");
+            });
+
+
             #endregion
         }
         public string GetRequest(string url)
