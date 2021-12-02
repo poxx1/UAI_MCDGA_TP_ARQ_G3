@@ -21,7 +21,7 @@ namespace API_Gateway.Controller
             Get("/v1/Arm/TurnON", x =>
             {
                 ;
-                return GetRequest(urlArm + "/v1/Arm/TurnON"); ;
+                return GetRequest(urlArm + "/v1/Arm/TurnON");
             });
 
             Get("/v1/Arm/TurnOFF", x =>
@@ -204,12 +204,13 @@ namespace API_Gateway.Controller
         public string GetRequest(string url)
         {
             var client = new RestClient(url);
-            client.Timeout = 10;
+            client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-            request = null;
+            
             return response.Content.ToString();
+
         }
     }
 }

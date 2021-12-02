@@ -59,7 +59,7 @@ namespace ZMQ_Server_G3
 
                         server.SendFrame(response);
                         Console.WriteLine("Response sent");
-                        Thread.Sleep(10000);
+                        Thread.Sleep(3000);
                         //changePort = false;
                         //Console.ReadLine();
                         server.Close();
