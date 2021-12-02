@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Models/1.0.0": {
+        "dependencies": {
+          "MongoDB.Bson": "2.14.0"
+        },
+        "runtime": {
+          "Models.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.14.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "assemblyVersion": "2.14.0.0",
+            "fileVersion": "2.14.0.0"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {}
+    }
+  },
+  "libraries": {
+    "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MongoDB.Bson/2.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N96X3aExk5hN7WmNdxgNijfbBSOjazd2H1lJO79u2YD2LO472EBihtVjzbKIeUUs4NW+9tCqyyyrvTVNYB1apw==",
+      "path": "mongodb.bson/2.14.0",
+      "hashPath": "mongodb.bson.2.14.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    }
+  }
+}

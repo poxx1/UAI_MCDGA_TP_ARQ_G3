@@ -32,21 +32,23 @@ namespace API_Gateway.Controller
             #region Conveyor
             Get("/v1/Conveyour/TurnON", x =>
             {
-                ;
+                ;//Socket with message TurnON
                 return GetRequest(urlConveyor + "/v1/Conveyor/TurnON"); ;
             });
 
             Get("/v1/Conveyour/TurnOFF", x =>
             {
-                ;
+                ;//Socket with message TurnOFF
                 return GetRequest(urlConveyor + "/v1/Conveyor/TurnON");
             });
 
             Get("/v1/Conveyour/CheckState", x =>
             {
-                ;
+                ;//Socket with checkState
                 return GetRequest(urlConveyor + "/v1/Conveyor/TurnON");
             });
+
+
             #endregion
 
             #region Press

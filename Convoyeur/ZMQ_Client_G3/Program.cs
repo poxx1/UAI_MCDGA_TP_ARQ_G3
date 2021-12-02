@@ -15,7 +15,7 @@ namespace ZMQ_Client_G3
             Console.WriteLine("Client");
             ConeyourManagerAPI api = new ConeyourManagerAPI();
 
-            using (var client = new RequestSocket("tcp://localhost:27016"))
+            using (var client = new RequestSocket("tcp://localhost:27022"))
             {
                 //I send bultos to the Cinta using this ZeroMQ Client.
                 //First i took one Bulto from the Pila of Bultos.
@@ -28,7 +28,6 @@ namespace ZMQ_Client_G3
                 client.SendFrame(request);
                 var serverReturn = client.ReceiveFrameString();
                 Console.WriteLine(serverReturn);
-                Console.ReadLine();
             }
         }
     }
