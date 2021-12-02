@@ -44,21 +44,23 @@ namespace ZMQ_Server_G3
 
             while (true)
             {
+                try
+                {
                     using (var server = new ResponseSocket("tcp://localhost:27022"))
                     {
                         //Once the server receives the Bulto from the Client it's makes the updates
                         // to the database to let the other component's know about it.
                         string requestIncoming = server.ReceiveFrameString();
-  
-                        String response = fnc[requestIncoming](requestIncoming);    
+
+                        String response = fnc[requestIncoming](requestIncoming);
 
                         //Here i call the methods for the API
                         //Add bulto to the List of Bultos in the Cinta.
                         //Parses the response
-                        
+
                         server.SendFrame(response);
                         Console.WriteLine("Response sent");
-                        Thread.Sleep(3000);
+                        Thread.Sleep(10000);
                         //changePort = false;
                         //Console.ReadLine();
                         server.Close();
@@ -66,6 +68,11 @@ namespace ZMQ_Server_G3
                         server.Dispose();
                         //server.Unbind("tcp://localhost:27022");
                     }
+                }
+                catch (Exception)
+                { 
+                    
+                }
             }
             #endregion
         }

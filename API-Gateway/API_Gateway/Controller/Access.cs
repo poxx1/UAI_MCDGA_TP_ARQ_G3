@@ -50,6 +50,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/TurnON").ToString();
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
             });
@@ -64,6 +66,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/TurnOFF").ToString();
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
                 
@@ -79,6 +83,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/CheckState");
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
                 
@@ -94,6 +100,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnConveyor");
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
                 ;
@@ -110,6 +118,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/GetBultosQuantityOnPile");
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
                 ;
@@ -135,6 +145,8 @@ namespace API_Gateway.Controller
                     var serverReturn = client.ReceiveFrameString();
                     Console.WriteLine(serverReturn);
                     GetRequest(urlConveyor + "/v1/Conveyor/PutBulto");
+                    client.Close();
+                    client.Dispose();
                     return serverReturn;
                 }
                 ;
