@@ -1,0 +1,17 @@
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\API_Gateway.exe.config
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\API_Gateway.exe
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\API_Gateway.pdb
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Microsoft.Owin.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Microsoft.Owin.Hosting.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Nancy.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Nancy.Owin.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Owin.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\RestSharp.dll
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.csprojAssemblyReference.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.AssemblyInfoInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.AssemblyInfo.cs
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.csproj.CoreCompileInputs.cache
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.csproj.CopyComplete
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.exe
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\obj\Debug\net472\API_Gateway.pdb
+C:\Users\CC668CG\OneDrive - EY\Desktop\TP_Arquitectura_G3\API-Gateway\API_Gateway\bin\Debug\net472\Microsoft.Owin.Host.HttpListener.dll

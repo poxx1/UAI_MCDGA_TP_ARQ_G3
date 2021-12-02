@@ -182,7 +182,7 @@ namespace Server.Nancy.Controller
                 List<Arm> lst = collection.Find(a => true).ToList();
 
                 arm = lst.First();
-                arm.IsStarted = true;
+                arm.IsStarted = false;
 
                 collection.ReplaceOne(c => c.IdArmMongo == arm.IdArmMongo, arm);
 
