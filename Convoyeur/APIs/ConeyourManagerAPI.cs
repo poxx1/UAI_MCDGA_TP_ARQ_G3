@@ -38,6 +38,7 @@ namespace APIs
         public bool removeBultoFromCinta(string mongoId)
         {
             //This method is called from the Brazo;
+
             return true;
         }
         public List<Bultos> getBultosOnCinta()
@@ -88,8 +89,7 @@ namespace APIs
             return true;
         }
 
-
-        public bool IsStarted()
+        public bool CheckState()
         {
             var database = mongo.connect();
             var collection = database.GetCollection<Conveyour>("Conveyour");

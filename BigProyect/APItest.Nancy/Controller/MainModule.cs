@@ -32,7 +32,7 @@ namespace Server.Nancy.Controller
         private static bool prensaIsStarted = false;
 
         private PilaBultos pilaBultos = new PilaBultos();
-        private Cinta cinta = new Cinta();
+        private Conveyour cinta = new Conveyour();
         #endregion  
         public MainController()
         {
@@ -60,6 +60,7 @@ namespace Server.Nancy.Controller
             });
             #endregion
 
+            //DEPRECATED
             #region Cinta
             //var rawRequest = Context.Request.Body.AsString();
             Get("/v1/cinta/state", x =>
@@ -107,7 +108,7 @@ namespace Server.Nancy.Controller
                 //Now work for the Cinta List
                 //Add the Bulto to the Cinta
                 
-                cinta.bultosOnCinta = lstBultosCinta;
+                //cinta.bultosOnCinta = lstBultosCinta;
 
                 return "The bulto is now on the Cinta";
             }); //Still needs ZMQ usage
@@ -162,8 +163,9 @@ namespace Server.Nancy.Controller
 
                 return "The cinta is already off";
             });
-            #endregion
+            #endregion //Not used anymore //DEPRECATED
 
+            //DEPRECATED
             #region Bultos
             Get("/v1/bultos/agregar", x =>
             {
@@ -197,9 +199,10 @@ namespace Server.Nancy.Controller
 
                 return "?";
             });
-            #endregion
+            #endregion //Not used anymore //DEPRECATED //DEPRECATED
 
-            #region Brazo
+            //USING
+            #region Arm
 
             //Toma un bulto de la Cinta y se lo pasa a la prensa.
             Get("/v1/Arm/Take", x =>
@@ -233,7 +236,24 @@ namespace Server.Nancy.Controller
                 return "Please check if the Press & the Arm are turned ON. Also check if the Press is not compressing.";
             });
 
-            #endregion
+            Get("/v1/Arm/Pass", x =>
+            {;
+                ArmController arm = new ArmController();
+                if(arm.TakeFromConveyor())
+                    return "The bulto has been added succesfully.";  
+               
+                else {
+                    return "Please check if the Press & the Arm are turned ON. Also check if the Press is not compressing.";
+                }
+            });
+
+            Get("/v1/Arm/AddNew", x =>
+            {;
+                ArmController arm = new ArmController();
+                arm.AddPressToBD();
+                return "Agregado perri";
+            });
+            #endregion 
         }
     }
 }

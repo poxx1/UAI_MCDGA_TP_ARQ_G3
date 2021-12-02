@@ -30,7 +30,7 @@ namespace ZMQ_Server_G3
                 blt.IDBulto = Int32.Parse(bulto[0]);
                 blt.IDBultoMongo = bulto[1];
 
-                if (api.IsStarted())
+                if (api.CheckState())
                     api.addBultoToCinta(blt);
                 else { response = "Can't add since the Conveyor is OFF. Please first turn ON."; } 
                 
