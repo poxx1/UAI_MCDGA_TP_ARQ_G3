@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
 using Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace APIs
 {
@@ -15,11 +16,22 @@ namespace APIs
         {
             List<Bultos> lst = new List<Bultos>();
             lst.Add(bulto);
-            conv.ListBultos = lst;
-
+            
             var database = mongo.connect();
             var collection = database.GetCollection<Conveyour>("Conveyour");
-            collection.InsertOne(conv);
+
+            List<Conveyour> lstB = collection.Find(b => true).ToList();
+
+            conv = lstB.First();
+
+            foreach (var item in lstB.ElementAt(0).ListBultos)
+            {
+                lst.Add(item);
+            }
+
+            conv.ListBultos = lst;
+
+            collection.ReplaceOne(c => c.IdConveyourMongo == conv.IdConveyourMongo, conv);
 
             return true;
         }
@@ -44,6 +56,48 @@ namespace APIs
             List<Bultos> lst = collection.Find(b => true).ToList();
 
             return lst.Count;
+        }
+
+        public bool turnON()
+        {
+            var database = mongo.connect();
+            var collection = database.GetCollection<Conveyour>("Conveyour");
+            List<Conveyour> lst = collection.Find(b => true).ToList();
+
+            conv = lst.First();
+
+            conv.IsStarted = true;
+
+            collection.ReplaceOne(c => c.IdConveyourMongo == conv.IdConveyourMongo, conv);
+
+            return true;
+        }
+
+        public bool turnOFF()
+        {
+            var database = mongo.connect();
+            var collection = database.GetCollection<Conveyour>("Conveyour");
+            List<Conveyour> lst = collection.Find(b => true).ToList();
+
+            conv = lst.First();
+
+            conv.IsStarted = false;
+
+            collection.ReplaceOne(c => c.IdConveyourMongo == conv.IdConveyourMongo, conv);
+
+            return true;
+        }
+
+
+        public bool IsStarted()
+        {
+            var database = mongo.connect();
+            var collection = database.GetCollection<Conveyour>("Conveyour");
+            List<Conveyour> lst = collection.Find(b => true).ToList();
+
+            //turnON();
+
+            return lst.First().IsStarted;
         }
         #endregion
 

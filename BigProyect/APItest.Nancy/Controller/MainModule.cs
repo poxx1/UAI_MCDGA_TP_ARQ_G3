@@ -200,25 +200,37 @@ namespace Server.Nancy.Controller
             #endregion
 
             #region Brazo
-            Get("/v1/brazo/tomar_bulto", x =>
+
+            //Toma un bulto de la Cinta y se lo pasa a la prensa.
+            Get("/v1/Arm/Take", x =>
             {;
                 var bultos = new Bultos_Manager();
                 var bulto = new Bultos();
                 var lst = new List<Bultos>();
 
-                pilaBultos.cantidadBultos = bultos.GetBultosQuantity();
-
-                if (bultos.Insert(pilaBultos.cantidadBultos + 1))
+                //Primero pregunto si el Brazo esta prendido y si la prensa tambien
+                if (brazoIsStarted && prensaIsStarted)
                 {
-                    bulto.IDBulto = pilaBultos.cantidadBultos + 1;
-                    lst.Add(bulto);
+                    pilaBultos.cantidadBultos = bultos.GetBultosQuantity();
+
+                    if (bultos.Insert(pilaBultos.cantidadBultos + 1))
+                    {
+                        bulto.IDBulto = pilaBultos.cantidadBultos + 1;
+                        lst.Add(bulto);
+                    }
+
+                    pilaBultos.pilaBultos = lst;
+
+                    Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
+
+                    //Una vez que agregue el bulto, se lo paso al brazo.
+
+                    return "The bulto has been added succesfully.";
                 }
 
-                pilaBultos.pilaBultos = lst;
+                //
 
-                Console.WriteLine("Now you have {0} pending bultos", pilaBultos.cantidadBultos + 1);
-
-                return "The bulto has been added succesfully.";
+                return "Please check if the Press & the Arm are turned ON. Also check if the Press is not compressing.";
             });
 
             #endregion

@@ -19,9 +19,8 @@ namespace ZMQ_Server_G3
             {
                 //Once the server receives the Bulto from the Client it's makes the updates
                 // to the database to let the other component's know about it.
-
                 string bultoReceived = server.ReceiveFrameString();
-                String response = "Bulto received";
+                String response = "Bulto received correctly";
 
                 //Here i call the methods for the API
                 //Add bulto to the List of Bultos in the Cinta.
@@ -30,8 +29,11 @@ namespace ZMQ_Server_G3
 
                 blt.IDBulto = Int32.Parse(bulto[0]);
                 blt.IDBultoMongo = bulto[1];
-                api.addBultoToCinta(blt);
 
+                if (api.IsStarted())
+                    api.addBultoToCinta(blt);
+                else { response = "Can't add since the Conveyor is OFF. Please first turn ON."; } 
+                
                 server.SendFrame(response);
                 Console.WriteLine("Response sent");
                 Console.ReadLine();
