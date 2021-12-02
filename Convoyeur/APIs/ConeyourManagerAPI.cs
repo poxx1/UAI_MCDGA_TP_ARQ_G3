@@ -52,9 +52,9 @@ namespace APIs
         public int getBultosQuantityOnCinta()
         {
             var database = mongo.connect();
-            var collection = database.GetCollection<Bultos>("Conveyour");
+            var collection = database.GetCollection<Conveyour>("Conveyour");
 
-            List<Bultos> lst = collection.Find(b => true).ToList();
+            List<Bultos> lst = collection.Find(b => true).ToList().First().ListBultos;
 
             return lst.Count;
         }
