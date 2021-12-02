@@ -1,17 +1,18 @@
 ﻿using Models;
 using MongoDB.Driver;
+using Observer;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace APIs
 {
-    public class SensorsAPI
+    public class SensorsAPI : IObserver
     {
         MongoDBConnector mongo = new MongoDBConnector();
         public bool CreateActive()
         {
             var database = mongo.connect();
-            var sensor = new Sensors() {Name = "Active", State = true};
+            var sensor = new Sensors() { Name = "Active", State = true };
             var collection = database.GetCollection<Sensors>("Sensors");
 
             collection.InsertOne(sensor);
@@ -21,7 +22,7 @@ namespace APIs
         public bool CreatePassive()
         {
             var database = mongo.connect();
-            var sensor = new Sensors() { Name = "Passive", State = true};
+            var sensor = new Sensors() { Name = "Passive", State = true };
             var collection = database.GetCollection<Sensors>("Sensors");
 
             collection.InsertOne(sensor);
@@ -48,7 +49,7 @@ namespace APIs
             {
                 return false;
             }
-            
+
         }
         public bool ArmDOWN()
         {
@@ -137,6 +138,28 @@ namespace APIs
             List<Sensors> lst = collection.Find(p => true).ToList();
 
             return lst.First().State;
+        }
+        public bool Update(ISubject subject)
+        {
+            //Levanto el brazo
+            if (!CheckActive())
+            {
+                var db = mongo.connect();
+                var collection = db.GetCollection<Sensors>("Sensors");
+                var sensor = new Sensors() { Name = "Active", State = false, IDSensor = GetActive() };
+
+                //InsertIntoMongo
+                collection.ReplaceOne(s => s.IDSensor == GetActive(), sensor);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        void IObserver.Update(ISubject subject)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

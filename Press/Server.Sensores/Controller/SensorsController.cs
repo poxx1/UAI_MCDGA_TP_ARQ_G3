@@ -3,14 +3,16 @@ using Nancy.Extensions;
 using Newtonsoft.Json;
 using Models;
 using APIs;
+using Observer;
+using System.Collections.Generic;
 
 namespace Server.Sensores.Controller
 {
-    public class SensorsController : NancyModule
+    public class SensorsController : NancyModule, ISubject
     {
         SensorsAPI apiS = new SensorsAPI();
         PressAPI apiP = new PressAPI();
-        public SensorsController()
+        public SensorsController() 
         {
             Get("/v1/Press/Compress", _ =>
             {
@@ -36,7 +38,8 @@ namespace Server.Sensores.Controller
                 //Change the state of the arm
                 if (apiS.CheckActive() && apiP.CurrentState())
                 {
-                    apiS.ArmUP();
+                    //apiS.ArmUP();
+                    Notify();
                     apiS.RelasePress();
 
                     return true;
@@ -46,7 +49,32 @@ namespace Server.Sensores.Controller
                 {
                     return false;
                 }
-            });
+            }); 
         }
+
+        #region Subject
+        public bool State { get; set; } = false;
+
+        private List<IObserver> ListObservers = new List<IObserver>();
+
+        public void Attach(IObserver observer)
+        {
+            ListObservers.Add(observer);
+        }
+
+        public void Detach(IObserver observer)
+        {
+            ListObservers.Remove(observer);
+        }
+
+        public void Notify()
+        {
+            foreach (var observer in ListObservers)
+            {
+                observer.Update(this);
+            }
+        }
+
+        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace APIs
     public class PressAPI
     {
         MongoDBConnector mongo = new MongoDBConnector();
-
         public bool TurnOn()
         {
             if (!CurrentState())
